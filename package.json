@@ -1,26 +1,17 @@
 {
   "name": "tailwind-demo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "tailwindcss": "^1.9.6"
-  },
-  "devDependencies": {},
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nsnyder/tailwind-demo.git"
+  "dependencies": {
+    "tailwindcss": "^1.9.6",
+    "vue": "^2.6.11"
   },
-  "keywords": [
-    "tailwindcss"
-  ],
-  "author": "Nathan Snyder <nathan@snydern.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/nsnyder/tailwind-demo/issues"
-  },
-  "homepage": "https://github.com/nsnyder/tailwind-demo#readme"
+  "devDependencies": {
+    "@vue/cli-service": "~4.5.0",
+    "vue-template-compiler": "^2.6.11"
+  }
 }
