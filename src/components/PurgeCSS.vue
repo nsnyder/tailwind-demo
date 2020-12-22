@@ -65,7 +65,7 @@ export default {
 
       return parts.reduce((fullText, currentLine) => {
         return fullText + '\n' + currentLine.substring(excessSpaces);
-      }, parts.shift());
+      }, computed + ': ' + parts.shift());
     },
     setLevel: function(newLevel) {
       this.level = Math.min(Math.max(1, newLevel), 9);
