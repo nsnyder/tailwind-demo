@@ -1,7 +1,11 @@
 <template>
-  <div id="app">
-    <div @click="counter++">Counter! {{ counter }}</div>
-    <!-- <component :is="component" /> -->
+  <div id="app" class="m-4">
+    <div class="mb-8" @click="selectedIndex = index" v-for="(element, index) in demos" :key="index">
+      {{ element.name }}
+    </div>
+    <div class="py-8">
+      <component :is="selectedComponent.component" />
+    </div>
   </div>
 </template>
 
@@ -12,16 +16,25 @@
     name: 'App',
 
     components: {
-      
+      purgeCss,
     },
 
     data() {
       return {
-        demos: {
-          'PurgeCSS': 'purge-css'
-        },
-        counter: 0
+        demos: [
+          {
+            name: 'PurgeCSS',
+            component: 'purge-css'
+          }
+        ],
+        selectedIndex: 0
       };
+    },
+
+    computed: {
+      selectedComponent: function() {
+        return this.demos[this.selectedIndex];
+      }
     }
   }
 </script>

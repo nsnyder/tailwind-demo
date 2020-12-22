@@ -4,7 +4,7 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   purge: {
-    enabled: true,
+    enabled: false,
     content: [
       './src/**/*.html',
       './src/**/*.vue',
@@ -15,11 +15,11 @@ module.exports = {
     // These options are passed through directly to PurgeCSS.
     options: {
       whitelistPatterns: [
-        /text-red-/
+        // /text-red-/
       ],
-      // whitelist: [
-      //   'text-red-100', 'text-red-200', 'text-red-300', 'text-red-400', 'text-red-500', 'text-red-600', 'text-red-700', 'text-red-800', 'text-red-900'
-      // ]
+      whitelist: [
+        // 'text-red-100', 'text-red-200', 'text-red-300', 'text-red-400', 'text-red-500', 'text-red-600', 'text-red-700', 'text-red-800', 'text-red-900'
+      ]
     }
   },
   theme: {
