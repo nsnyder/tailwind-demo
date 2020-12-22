@@ -23,10 +23,7 @@
 
     <collapsible-code name="colorClass (computed property)">
       <pre>
-colorClass: function() {
-  const intensity = this.level * 100;
-  return `text-red-${intensity}`; // PurgeCSS doesn't know to include all the text-red-* classes!
-}
+{{ getBaseComputedExpression('colorClass') }}
       </pre>
     </collapsible-code>
   </div>
@@ -52,11 +49,24 @@ export default {
   computed: {
     colorClass: function() {
       const intensity = this.level * 100;
+
+      // PurgeCSS doesn't know to automatically include `text-red-*`.
       return `text-red-${intensity}`;
     }
   },
 
   methods: {
+    getBaseComputedExpression(computed) {
+      const expression = this._computedWatchers[computed].expression.toString();
+      const parts = expression.split('\n');
+      const lastLine = parts[parts.length - 1];
+
+      const excessSpaces = lastLine.length - lastLine.trimStart().length;
+
+      return parts.reduce((fullText, currentLine) => {
+        return fullText + '\n' + currentLine.substring(excessSpaces);
+      }, parts.shift());
+    },
     setLevel: function(newLevel) {
       this.level = Math.min(Math.max(1, newLevel), 9);
     }
