@@ -12,11 +12,11 @@
         <span class="inline-block rounded-l-full pl-8 px-4 py-6 bg-gray-700">Intensity</span>
         <a href="#"
           class="inline-block p-6 bg-red-700"
-          @click.prevent="level = Math.max(level-1, 1)"
+          @click.prevent="setLevel(level - 1)"
         >-</a>
         <a href="#"
           class="inline-block p-6 bg-blue-700 rounded-r-full"
-          @click.prevent="level = Math.min(level+1, 9)"
+          @click.prevent="setLevel(level + 1)"
         >+</a>
       </span>
     </div>
@@ -24,7 +24,7 @@
     <collapsible-code name="colorClass (computed property)">
       <pre>
 colorClass: function() {
-  const intensity = Math.min(Math.max(1, this.level), 9) * 100;
+  const intensity = this.level * 100;
   return `text-red-${intensity}`; // PurgeCSS doesn't know to include all the text-red-* classes!
 }
       </pre>
@@ -45,14 +45,20 @@ export default {
 
   data() {
     return {
-      level: 4,
+      level: 5,
     };
   },
 
   computed: {
     colorClass: function() {
-      const intensity = Math.min(Math.max(1, this.level), 9) * 100;
+      const intensity = this.level * 100;
       return `text-red-${intensity}`;
+    }
+  },
+
+  methods: {
+    setLevel: function(newLevel) {
+      this.level = Math.min(Math.max(1, newLevel), 9);
     }
   }
 }
