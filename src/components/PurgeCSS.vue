@@ -22,54 +22,45 @@
     </div>
 
     <collapsible-code name="colorClass (computed property)">
-      <pre>
-{{ getBaseComputedExpression('colorClass') }}
-      </pre>
+      <pre>{{ getBaseComputedExpression('colorClass') }}</pre>
     </collapsible-code>
   </div>
 </template>
 
 <script>
-import collapsibleCode from '~/components/CollapsibleCode.vue';
-import CollapsibleCode from './CollapsibleCode.vue';
+  import collapsibleCode from '~/components/CollapsibleCode.vue';
+  import extractsCode from '~/mixins/ExtractsCode.js';
 
-export default {
-  name: 'PurgeCSS',
+  export default {
+    name: 'PurgeCSS',
 
-  components: {
-    collapsibleCode
-  },
-
-  data() {
-    return {
-      level: 5,
-    };
-  },
-
-  computed: {
-    colorClass: function() {
-      const intensity = this.level * 100;
-
-      // PurgeCSS doesn't know to automatically include `text-red-*`.
-      return `text-red-${intensity}`;
-    }
-  },
-
-  methods: {
-    getBaseComputedExpression(computed) {
-      const expression = this._computedWatchers[computed].expression.toString();
-      const parts = expression.split('\n');
-      const lastLine = parts[parts.length - 1];
-
-      const excessSpaces = lastLine.length - lastLine.trimStart().length;
-
-      return parts.reduce((fullText, currentLine) => {
-        return fullText + '\n' + currentLine.substring(excessSpaces);
-      }, computed + ': ' + parts.shift());
+    components: {
+      collapsibleCode
     },
-    setLevel: function(newLevel) {
-      this.level = Math.min(Math.max(1, newLevel), 9);
+
+    mixins: [
+      extractsCode
+    ],
+
+    data() {
+      return {
+        level: 5,
+      };
+    },
+
+    computed: {
+      colorClass: function() {
+        const intensity = this.level * 100;
+
+        // PurgeCSS doesn't know to automatically include `text-red-*`.
+        return `text-red-${intensity}`;
+      }
+    },
+
+    methods: {
+      setLevel: function(newLevel) {
+        this.level = Math.min(Math.max(1, newLevel), 9);
+      }
     }
   }
-}
 </script>
