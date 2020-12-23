@@ -1,13 +1,13 @@
 <template>
-  <div class="text-left text-gray-200">
-    <a href="#" class="block bg-gray-800 border-gray-500 border-b-2 p-4" @click="hidden = !hidden">
+  <div class="text-left text-gray-200 mt-4">
+    <a href="#" class="block hljs border-gray-500 border-b-2 p-4" @click="hidden = !hidden">
       {{ name }}
     </a>
-    <code class="block bg-gray-800 transition-all origin-top duration-200 scale-y-0 transform text-lg"
-      :class="{ 'scale-y-100 p-4': !hidden, 'h-0': hidden }"
+    <div class="block hljs transition-all origin-top duration-200 scale-y-0 transform text-lg"
+      :class="{ 'scale-y-100': !hidden, 'h-0': hidden }"
     >
-      <slot />
-    </code>
+      <highlightjs :language="language" :code="code" />
+    </div>
   </div>
 </template>
 
@@ -16,6 +16,11 @@
     name: 'CollapsibleCode',
 
     props: {
+      code: String,
+      language: {
+        type: String,
+        default: 'javascript',
+      },
       name: String,
       hiddenByDefault: {
         type: Boolean,
@@ -25,7 +30,7 @@
 
     data() {
       return {
-        hidden: this.hiddenByDefault,
+        hidden: this.hiddenByDefault
       };
     }
   }

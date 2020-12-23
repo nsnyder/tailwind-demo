@@ -10,13 +10,13 @@
 </template>
 
 <script>
-  import purgeCss from '~/components/PurgeCSS.vue';
+  import PurgeCss from '~/components/PurgeCSS.vue';
 
   export default {
     name: 'App',
 
     components: {
-      purgeCss,
+      PurgeCss,
     },
 
     data() {
@@ -39,4 +39,7 @@
   }
 </script>
 
-<style src='./styles/main.css'></style>
+<style>
+  @import './styles/main.css';
+  @import './styles/tomorrow-night-eighties.css';
+</style>

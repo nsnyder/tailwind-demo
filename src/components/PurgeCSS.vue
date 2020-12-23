@@ -21,25 +21,31 @@
       </span>
     </div>
 
-    <collapsible-code name="colorClass (computed property)">
-      <pre>{{ getBaseComputedExpression('colorClass') }}</pre>
-    </collapsible-code>
+    <collapsible-code
+      name="colorClass"
+      :code="getBaseComputedExpression('colorClass')"
+      :hidden-by-default="true"
+    />
+
+    <tailwind-config />
   </div>
 </template>
 
 <script>
-  import collapsibleCode from '~/components/CollapsibleCode.vue';
-  import extractsCode from '~/mixins/ExtractsCode.js';
+  import CollapsibleCode from '~/components/CollapsibleCode.vue';
+  import TailwindConfig from '~/components/TailwindConfig.vue';
+  import ExtractsCode from '~/mixins/ExtractsCode.js';
 
   export default {
     name: 'PurgeCSS',
 
     components: {
-      collapsibleCode
+      CollapsibleCode,
+      TailwindConfig,
     },
 
     mixins: [
-      extractsCode
+      ExtractsCode
     ],
 
     data() {
