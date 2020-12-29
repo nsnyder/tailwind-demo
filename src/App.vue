@@ -39,7 +39,4 @@
   }
 </script>
 
-<style>
-  @import './styles/main.css';
-  @import './styles/tomorrow-night-eighties.css';
-</style>
+<style src="./styles/main.css">

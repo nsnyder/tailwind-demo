@@ -4,7 +4,8 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   purge: {
-    enabled: false,
+    enabled: true,
+    mode: 'all',
     content: [
       './src/**/*.html',
       './src/**/*.vue',
@@ -15,16 +16,22 @@ module.exports = {
     // These options are passed through directly to PurgeCSS.
     options: {
       whitelistPatterns: [
-        // /text-red-/
+        'bg-green-',
+        /[text|bg]-green-/,
+        /^(text|bg)-green-\d{3}$/
       ],
       whitelist: [
-        // 'text-red-100', 'text-red-200', 'text-red-300', 'text-red-400', 'text-red-500', 'text-red-600', 'text-red-700', 'text-red-800', 'text-red-900'
+        'col-span-1', 'col-span-2', 'col-span-3', 'col-span-4', 'col-span-5',
       ]
     }
   },
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateRows: {
+        '8': 'repeat(8, minmax(0, 1fr))',
+      }
+    },
   },
-  variants: {},
-  plugins: [],
+  // variants: {},
+  // plugins: [],
 }

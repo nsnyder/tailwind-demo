@@ -1,6 +1,6 @@
 <template>
   <div class="text-left text-gray-200 mt-4">
-    <a href="#" class="block hljs border-gray-500 border-b-2 p-4 text-lg" @click="hidden = !hidden">
+    <a href="#" class="no-underline block hljs border-gray-500 border-b-2 p-4 text-lg" @click.prevent="hidden = !hidden">
       <span class="text-gray-800 rounded-full bg-white w-6 h-6 inline-flex place-content-center font-bold mr-4">
         {{ hidden ? '+' : '-' }}
       </span>
