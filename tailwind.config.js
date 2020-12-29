@@ -16,7 +16,6 @@ module.exports = {
     // These options are passed through directly to PurgeCSS.
     options: {
       whitelistPatterns: [
-        'bg-green-',
         /[text|bg]-green-/,
         /^(text|bg)-green-\d{3}$/
       ],
