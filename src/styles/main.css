@@ -11,19 +11,12 @@ a {
 /* My custom utilities. */
 @import './tomorrow-night-eighties.css';
 
-/*! purgecss start ignore */
+/*! purgecss ignore */
 .zoom-in {
   @apply transform transition-all duration-75;
 }
-/*! purgecss end ignore */
 
-/*! purgecss ignore */
 .zoom-in:hover {
-  @apply scale-150;
-}
-
-/* Divs were given tabindex="0" to make them focusable. */
-.zoom-in:focus {
   /*! purgecss ignore current */
-  @apply bg-red-600;
+  @apply scale-150;
 }

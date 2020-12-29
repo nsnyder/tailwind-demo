@@ -11,7 +11,6 @@
       </div>
       <div class="inline-grid grid-flow-col grid-rows-8 auto-cols-min gap-1">
         <div v-for="(div, index) in gridDivs"
-          tabindex="0"
           :key="index"
           :class="div.classes"
           v-text="div.text"
@@ -68,7 +67,7 @@
   const examinedFunctions = {
     computeDateClasses: function(level) {
       const intensity = Math.min(Math.max(1, level), 9) * 100;
-      const zoomDirection = 'ni'.split('').reverse().join('');
+      const zoomDirection = 'in';
 
       // PurgeCSS doesn't know to keep `bg-green-*` classes, or `zoom-*` classes.
       // Note: Tailwind documentation actively discourages this!
