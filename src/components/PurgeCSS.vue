@@ -30,6 +30,13 @@
         :hidden-by-default="true"
       />
 
+      <collapsible-code
+        name="src/styles/main.css"
+        :code="publishedCss"
+        language="css"
+        :hidden-by-default="true"
+      />
+
       <tailwind-config />
     </div>
 
@@ -95,9 +102,8 @@
     ],
 
     data() {
-      const today = startOfToday();
       return {
-        today,
+        today: startOfToday(),
         examinedFunctions,
         currentDate: null,
       };
