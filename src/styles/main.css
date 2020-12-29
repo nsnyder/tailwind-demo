@@ -1,3 +1,6 @@
+/* Note: PurgeCSS ignore comments around imports are not working in this project. */
+@import './tomorrow-night-eighties.css';
+
 @tailwind base;
 
 /* My custom base styles. */
@@ -9,7 +12,6 @@ a {
 @tailwind utilities;
 
 /* My custom utilities. */
-@import './tomorrow-night-eighties.css';
 
 /*! purgecss ignore */
 .zoom-in {
@@ -20,3 +22,9 @@ a {
   /*! purgecss ignore current */
   @apply scale-150;
 }
+
+/*! purgecss start ignore */
+.zoom-in:active {
+  @apply bg-red-600;
+}
+/*! purgecss end ignore */

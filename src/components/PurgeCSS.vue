@@ -126,7 +126,7 @@
             text: current.text,
           });
 
-          const newIndex = Math.min(currentIndex + (current.width * 7), this.daysToCommits.length - 1);
+          const newIndex = Math.min(currentIndex + (current.width * 7), this.daysToCommits.length);
           const divs = previous.concat(this.daysToCommits.slice(currentIndex, newIndex).map(e => ({
             date: e.date,
             commits: e.commits,
