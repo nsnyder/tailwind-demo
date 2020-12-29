@@ -30,13 +30,6 @@
         :hidden-by-default="true"
       />
 
-      <collapsible-code
-        name="src/styles/main.css"
-        :code="publishedCss"
-        language="css"
-        :hidden-by-default="true"
-      />
-
       <tailwind-config />
     </div>
 
