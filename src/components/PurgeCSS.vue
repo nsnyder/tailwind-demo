@@ -1,5 +1,5 @@
 <template>
-  <div class="container m-auto">
+  <div>
     <div class="text-center">
       <div class="text-4xl text-green-700">
         <template v-if="!currentDate">

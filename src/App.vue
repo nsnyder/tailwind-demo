@@ -1,9 +1,20 @@
 <template>
   <div id="app" class="m-4">
-    <div class="mb-8" @click="selectedIndex = index" v-for="(element, index) in demos" :key="index">
-      {{ element.name }}
-    </div>
-    <div class="py-8">
+    <ul class="space-x-2">
+      <li
+        class="inline-block"
+        v-for="(element, index) in demos"
+        :key="index"
+      >
+        <a :href="'#' + element.name"
+          class="mb-8 rounded-full bg-green-300 py-2 px-4 no-underline text-green-900"
+          @click="selectedIndex = index"
+        >
+          {{ element.name }}
+        </a>
+      </li>
+    </ul>
+    <div class="py-8 container m-auto">
       <component :is="selectedComponent.component" />
     </div>
   </div>
@@ -11,12 +22,23 @@
 
 <script>
   import PurgeCss from '~/components/PurgeCSS.vue';
+  import Notes from '~/components/Notes.vue';
 
   export default {
     name: 'App',
 
     components: {
       PurgeCss,
+      Notes,
+    },
+
+    mounted() {
+      let foundIndex = this.demos.findIndex(value => value.name === window.location.hash.substring(1));
+      if (foundIndex === -1) {
+        foundIndex = 0;
+      }
+
+      this.selectedIndex = foundIndex;
     },
 
     data() {
@@ -25,6 +47,10 @@
           {
             name: 'PurgeCSS',
             component: 'purge-css'
+          },
+          {
+            name: 'Notes',
+            component: 'notes'
           }
         ],
         selectedIndex: 0
