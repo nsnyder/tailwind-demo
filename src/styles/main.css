@@ -28,3 +28,7 @@ a {
   @apply bg-red-600;
 }
 /*! purgecss end ignore */
+
+.btn {
+  @apply inline-block bg-blue-500 font-bold rounded-lg px-4 py-2 text-white no-underline;
+}

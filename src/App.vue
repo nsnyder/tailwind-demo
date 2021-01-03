@@ -21,15 +21,17 @@
 </template>
 
 <script>
-  import PurgeCss from '~/components/PurgeCSS.vue';
+  import Directives from '~/components/Directives.vue';
   import Notes from '~/components/Notes.vue';
+  import PurgeCss from '~/components/PurgeCSS.vue';
 
   export default {
     name: 'App',
 
     components: {
-      PurgeCss,
+      Directives,
       Notes,
+      PurgeCss,
     },
 
     mounted() {
@@ -44,6 +46,10 @@
     data() {
       return {
         demos: [
+          {
+            name: '@directives',
+            component: 'directives',
+          },
           {
             name: 'PurgeCSS',
             component: 'purge-css'
