@@ -19,8 +19,13 @@ export default {
     codeToString(code, name) {
       // Split the code into individual lines.
       const parts = code.toString().split('\n');
-      const lastLine = parts[parts.length - 1];
+      const lastLine = parts.map(p => p).reverse().find(line => line.trim().length > 0);
 
+      // Add a failsafe.
+      if (!lastLine) {
+        return 'Could not find the specified rule.';
+      }
+      
       // Count the spaces that need to be trimmed off the start.
       const excessSpaces = lastLine.length - lastLine.trimStart().length;
 
@@ -51,13 +56,19 @@ export default {
       store.mainCss = await response.text();
     },
     getRuleFromCss(selector) {
+      if (!store.mainCss) {
+        return '';
+      }
+
       const parts = store.mainCss.split('\n');
 
       let bracketCounter = 0;
-      let hasStarted = false;
+      let hasEnded = false;
       return this.codeToString(parts.reduce((previous, current) => {
-        if (!hasStarted && current.includes(selector + ' {')) {
-          hasStarted = true;
+        if (
+          (!hasEnded && current.includes(selector + ' {')) ||
+          (bracketCounter > 0 && current.includes('{'))
+        ) {
           bracketCounter++;
         }
 
@@ -67,6 +78,10 @@ export default {
 
         if (bracketCounter > 0 && current.includes('}')) {
           bracketCounter--;
+
+          if (bracketCounter === 0) {
+            hasEnded = true;
+          }
         }
 
         return previous;

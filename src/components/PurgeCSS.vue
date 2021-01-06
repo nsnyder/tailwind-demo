@@ -33,21 +33,7 @@
       <tailwind-config />
     </div>
 
-    <div class="mt-4">
-      <h3 class="text-lg font-bold">More resources:</h3>
-      <ul>
-        <li>
-          <a href="https://github.com/FullHuman/purgecss-docs/blob/master/whitelisting.md">
-            PurgeCSS: Whitelisting Documentation
-          </a>
-        </li>
-        <li>
-          <a href="https://v1.tailwindcss.com/docs/controlling-file-size#writing-purgeable-html">
-            Tailwind: Writing Purgeable HTML
-          </a>
-        </li>
-      </ul>
-    </div>
+    <resources-footer :resources="resources" />
   </div>
 </template>
 
@@ -55,6 +41,7 @@
   import CollapsibleCode from '~/components/CollapsibleCode.vue';
   import TailwindConfig from '~/components/TailwindConfig.vue';
   import ExtractsCode from '~/mixins/ExtractsCode.js';
+  import ResourcesFooter from '~/components/ResourcesFooter.vue';
   import subYears from 'date-fns/subYears';
   import addDays from 'date-fns/addDays';
   import subDays from 'date-fns/subDays';
@@ -87,6 +74,7 @@
 
     components: {
       CollapsibleCode,
+      ResourcesFooter,
       TailwindConfig,
     },
 
@@ -210,6 +198,18 @@
         }
 
         return monthData;
+      },
+      resources: function() {
+        return [
+          {
+            href: 'https://github.com/FullHuman/purgecss-docs/blob/master/whitelisting.md',
+            name: 'PurgeCSS: Whitelisting Documentation',
+          },
+          {
+            href: 'https://v1.tailwindcss.com/docs/controlling-file-size#writing-purgeable-html',
+            name: 'Tailwind: Writing Purgeable HTML',
+          }
+        ]
       }
     },
 

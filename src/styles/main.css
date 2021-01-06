@@ -33,12 +33,14 @@ a {
   @apply inline-block bg-blue-500 font-bold rounded-lg px-4 py-2 text-white no-underline;
 }
 
-@variants hover {
-  .btn-hulk {
-    @apply btn;
-    @apply bg-green-500;
-    @apply duration-100;
-    transform: scale(2);
-    transform-origin: top left;
+@responsive { /* Variants can use the @responsive {} directive. */
+  @variants hover {
+    .btn-hulk {
+      @apply btn;
+      @apply bg-green-500;
+      @apply duration-100;
+      transform: scale(2);
+      transform-origin: top left;
+    }
   }
 }
