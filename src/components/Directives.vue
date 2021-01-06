@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <h2 class="text-4xl">Tailwind Directives</h2>
-    <div class="border-t-2" v-for="(directive, index) in directives" :key="index">
+    <div class="border-t-2 mt-2" v-for="(directive, index) in directives" :key="index">
       <collapsible-code :code="directive.cssSelector ? getRuleFromCss(directive.cssSelector) : directive.css"
         language="css"
         :name="directive.name"
@@ -44,11 +44,18 @@
             markupName: '',
           },
           {
-            name: '@apply',
+            name: '@apply (Tailwind classes)',
             css: null,
             cssSelector: '.btn',
             markup: '<a class="btn" href="#">Some Button</a>',
             markupName: '.btn',
+          },
+          {
+            name: '@apply (Custom classes)',
+            css: null,
+            cssSelector: '.btn-green',
+            markup: '<a class="btn-green" href="#">Some Button</a>',
+            markupName: '.btn-green',
           }
         ]
       };
