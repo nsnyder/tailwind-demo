@@ -53,19 +53,20 @@ export default {
     getRuleFromCss(selector) {
       const parts = store.mainCss.split('\n');
 
-      let startFound = false;
-      let endFound = false;
+      let bracketCounter = 0;
+      let hasStarted = false;
       return this.codeToString(parts.reduce((previous, current) => {
-        if (current.includes(selector + ' {')) {
-          startFound = true;
+        if (!hasStarted && current.includes(selector + ' {')) {
+          hasStarted = true;
+          bracketCounter++;
         }
 
-        if (startFound && !endFound) {
+        if (bracketCounter > 0) {
           previous = previous + current + '\n';
         }
 
-        if (startFound && current.includes('}')) {
-          endFound = true;
+        if (bracketCounter > 0 && current.includes('}')) {
+          bracketCounter--;
         }
 
         return previous;

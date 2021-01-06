@@ -53,9 +53,16 @@
           {
             name: '@apply (Custom classes)',
             css: null,
-            cssSelector: '.btn-green',
-            markup: '<a class="btn-green" href="#">Some Button</a>',
-            markupName: '.btn-green',
+            cssSelector: '.btn-hulk',
+            markup: '<a class="btn-hulk mb-12" href="#">Some Button</a>',
+            markupName: '.btn-hulk',
+          },
+          {
+            name: '@variants',
+            css: null,
+            cssSelector: '@variants hover',
+            markup: '<a class="btn hover:btn-hulk mb-12" href="#">Some Button</a>',
+            markupName: '.btn-hulk:hover',
           }
         ]
       };

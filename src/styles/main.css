@@ -33,6 +33,12 @@ a {
   @apply inline-block bg-blue-500 font-bold rounded-lg px-4 py-2 text-white no-underline;
 }
 
-.btn-green {
-  @apply btn bg-green-500;
+@variants hover {
+  .btn-hulk {
+    @apply btn;
+    @apply bg-green-500;
+    @apply duration-100;
+    transform: scale(2);
+    transform-origin: top left;
+  }
 }
