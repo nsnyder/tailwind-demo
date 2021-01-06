@@ -65,10 +65,12 @@ export default {
       let bracketCounter = 0;
       let hasEnded = false;
       return this.codeToString(parts.reduce((previous, current) => {
+        let didIncrement = false;
         if (
           (!hasEnded && current.includes(selector + ' {')) ||
           (bracketCounter > 0 && current.includes('{'))
         ) {
+          didIncrement = true;
           bracketCounter++;
         }
 
@@ -76,7 +78,7 @@ export default {
           previous = previous + current + '\n';
         }
 
-        if (bracketCounter > 0 && current.includes('}')) {
+        if (!didIncrement && bracketCounter > 0 && current.includes('}')) {
           bracketCounter--;
 
           if (bracketCounter === 0) {
