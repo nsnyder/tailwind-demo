@@ -58,30 +58,38 @@
             name: '@apply (Custom classes)',
             css: null,
             cssSelector: '.btn-hulk',
-            markup: '<a class="btn-hulk mb-12" href="#">Some Button</a>',
+            markup: '<a class="btn-hulk" href="#">Some Button</a>',
             markupName: '.btn-hulk',
           },
           {
             name: '@variants',
             css: null,
             cssSelector: '@variants hover',
-            markup: '<a class="btn hover:btn-hulk mb-12" href="#">Some Button</a>',
+            markup: '<a class="btn hover:btn-hulk" href="#">Some Button</a>',
             markupName: '.hover:btn-hulk',
           },
           {
             name: '@responsive w/ @variants',
             css: null,
             cssSelector: 'Variants can use the @responsive',
-            markup: '<a class="btn lg:hover:btn-hulk mb-12" href="#">Some Button</a>',
+            markup: '<a class="btn lg:hover:btn-hulk" href="#">Some Button</a>',
             markupName: '.lg:hover:btn-hulk',
           },
-          // TODO
           {
             name: '@screen',
             css: null,
-            cssSelector: 'Variants can use the @responsive',
-            markup: '<a class="btn lg:hover:btn-hulk mb-12" href="#">Some Button</a>',
-            markupName: '.lg:hover:btn-hulk',
+            cssSelector: '@screen lg',
+            markup: '<a class="btn-scream" href="#">Screaming Button</a>',
+            markupName: '.btn-scream',
+          },
+          {
+            name: 'theme()',
+            css: null,
+            cssSelector: '.shadow-orange',
+            markup: `<div class="shadow-orange bg-black text-white uppercase font-bold text-3xl rounded-lg inline-block p-8">
+              Let's go Flyers!
+            </div>`,
+            markupName: '.shadow-orange',
           }
         ],
         resources: [

@@ -30,7 +30,7 @@ a {
 /*! purgecss end ignore */
 
 .btn {
-  @apply inline-block bg-blue-500 font-bold rounded-lg px-4 py-2 text-white no-underline;
+  @apply inline-block bg-blue-500 text-white font-bold rounded-lg px-4 py-2 mb-12 no-underline;
 }
 
 @responsive { /* Variants can use the @responsive {} directive. */
@@ -43,4 +43,18 @@ a {
       transform-origin: top left;
     }
   }
+}
+
+.btn-scream {
+  @apply btn;
+}
+
+@screen lg {
+  .btn-scream::after {
+    content: '!!!';
+  }
+}
+
+.shadow-orange {
+  box-shadow: 10px 10px 0px 0px theme('colors.orange.600');
 }
