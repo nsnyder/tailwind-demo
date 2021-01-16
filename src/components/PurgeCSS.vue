@@ -66,6 +66,8 @@
       // Note: Tailwind documentation actively discourages this!
       // https://v1.tailwindcss.com/docs/controlling-file-size#writing-purgeable-html
       return `col-span-${weeksInMonth}`;
+
+      /* This is a good spot to do a live demo. :) */
     }
   };
 

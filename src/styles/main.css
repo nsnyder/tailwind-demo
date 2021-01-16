@@ -29,10 +29,16 @@ a {
 }
 /*! purgecss end ignore */
 
+/* Use the apply directive to import Tailwind rules for other classes. */
 .btn {
-  @apply inline-block bg-blue-500 text-white font-bold rounded-lg px-4 py-2 mb-12 no-underline;
+  @apply inline-block px-4 py-2 mb-12
+    bg-blue-500
+    text-white font-bold
+    rounded-lg
+    no-underline;
 }
 
+/* The responsive directive can be used to generate all the variants for a specific rule. */
 @responsive { /* Variants can use the @responsive {} directive. */
   @variants hover {
     .btn-hulk {
@@ -49,12 +55,14 @@ a {
   @apply btn;
 }
 
+/* The screen directive can be used to only use rules at a specific breakpoint. */
 @screen lg {
   .btn-scream::after {
     content: '!!!';
   }
 }
 
+/* The theme function can be used to pull in existing Tailwind values where necessary. */
 .shadow-orange {
   box-shadow: 10px 10px 0px 0px theme('colors.orange.600');
 }

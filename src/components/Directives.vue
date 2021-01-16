@@ -86,9 +86,10 @@
             name: 'theme()',
             css: null,
             cssSelector: '.shadow-orange',
-            markup: `<div class="shadow-orange bg-black text-white uppercase font-bold text-3xl rounded-lg inline-block p-8">
+            markup: this.codeToString(`
+            <div class="shadow-orange bg-black text-white uppercase font-bold text-3xl rounded-lg inline-block p-8">
               Let's go Flyers!
-            </div>`,
+            </div>`, ''),
             markupName: '.shadow-orange',
           }
         ],
