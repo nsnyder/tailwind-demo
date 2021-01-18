@@ -1,13 +1,13 @@
 <template>
   <div id="app" class="m-4">
-    <ul class="space-x-2">
+    <ul class="space-x-2 mb-4 flex flex-wrap place-content-center">
       <li
-        class="inline-block"
+        class="inline-block mb-2"
         v-for="(element, index) in demos"
         :key="index"
       >
         <a :href="'#' + element.name"
-          class="mb-8 rounded-full bg-green-300 py-2 px-4 no-underline text-green-900"
+          class="rounded-full bg-green-300 py-2 px-4 no-underline text-green-900 inline-block"
           @click="selectedIndex = index"
         >
           {{ element.name }}
