@@ -69,7 +69,7 @@
               class="
                 inline-block p-2 bg-gray-300
                 text-gray-700 no-underline
-                rounded-xl border-2 border-gray-500 focus:border-red-700 focus:border-4
+                rounded-xl border-2 border-gray-500 focus:border-red-700
                 outline-none
             ">`
           },
