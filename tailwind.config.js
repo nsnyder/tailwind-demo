@@ -33,8 +33,10 @@ module.exports = {
     },
   },
   variants: {
-    'borderColor': ({ variants }) => [...variants('borderColor'), 'active'],
-    'borderWidth': ({ variants }) => [...variants('borderWidth'), 'active']
+    'backgroundColor': ({ variants }) => [...variants('backgroundColor'), 'odd'],
+    'borderColor': ({ variants }) => [...variants('borderColor'), 'focus'],
+    'boxShadow': ({ variants }) => [...variants('boxShadow'), 'active'],
+    'translate': ({ variants }) => [...variants('translate'), 'active']
   },
   // plugins: [],
 }

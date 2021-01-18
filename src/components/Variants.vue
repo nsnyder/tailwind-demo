@@ -40,7 +40,7 @@
               bg-red-600 hover:bg-green-600
               text-white text-4xl font-bold
               duration-500
-              w-full p-12
+              p-12
             ">
               Hover me!
             </div>`,
@@ -61,26 +61,45 @@
             </div>`,
           },
           {
+            name: 'Focus',
+            markup: `
+            <input type="text"
+              class="
+                inline-block p-2 bg-gray-300
+                text-gray-700 no-underline
+                rounded-xl border-2 border-gray-500 focus:border-red-700 focus:border-4
+                outline-none
+            ">`
+          },
+          {
             name: 'Active',
             markup: `
             <a href="#"
               class="
-                inline-block p-4 bg-red-300
-                text-gray-700 no-underline
-                border border-red-700 active:border-8 active:border-gray-800
-            ">
-              Some Link
-            </a>`
-          }
+                inline-block p-2 px-4
+                bg-gray-300
+                text-gray-800 no-underline
+                rounded-md
+                transform active:translate-y-1
+                shadow-xl active:shadow-none
+            ">Some Button</a>`
+          },
+          {
+            name: 'Odd',
+            markup: `
+            <table class="w-full border">
+              <tr class="odd:bg-gray-300"><td class="p-2">Item 1</td></tr>
+              <tr class="odd:bg-gray-300"><td class="p-2">Item 2</td></tr>
+              <tr class="odd:bg-gray-300"><td class="p-2">Item 3</td></tr>
+              <tr class="odd:bg-gray-300"><td class="p-2">Item 4</td></tr>
+              <tr class="odd:bg-gray-300"><td class="p-2">Item 5</td></tr>
+            </table>`
+          },
         ],
         resources: [
           {
-            href: 'https://v1.tailwindcss.com/docs/functions-and-directives',
-            name: 'Directives documentation'
-          },
-          {
             href: 'https://v1.tailwindcss.com/docs/pseudo-class-variants',
-            name: 'Predefined variants'
+            name: 'Variants documentation'
           }
         ]
       };
