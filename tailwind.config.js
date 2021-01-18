@@ -33,10 +33,10 @@ module.exports = {
     },
   },
   variants: {
-    'backgroundColor': ({ variants }) => [...variants('backgroundColor'), 'odd'],
-    'borderColor': ({ variants }) => [...variants('borderColor'), 'focus'],
-    'boxShadow': ({ variants }) => [...variants('boxShadow'), 'active'],
-    'translate': ({ variants }) => [...variants('translate'), 'active']
+    'backgroundColor': ({ after }) => after(['odd']),
+    'borderColor': ({ after }) => after(['focus']),
+    'boxShadow': ({ after }) => after(['active']),
+    'translate': ({ after }) => after(['active'])
   },
   // plugins: [],
 }

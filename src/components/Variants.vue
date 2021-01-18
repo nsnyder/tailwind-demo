@@ -17,6 +17,7 @@
   import CollapsibleCode from '~/components/CollapsibleCode.vue';
   import ResourcesFooter from '~/components/ResourcesFooter.vue';
   import ExtractsCode from '~/mixins/ExtractsCode';
+  import TailwindConfig from '~/components/TailwindConfig.vue';
 
   export default {
     name: 'Directives',
@@ -50,14 +51,15 @@
             markup: `
             <div class="
               grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5
+              gap-2
             ">
-              <div class="bg-red-500 h-20 w-20"></div>
-              <div class="bg-orange-500 h-20 w-20"></div>
-              <div class="bg-yellow-500 h-20 w-20"></div>
-              <div class="bg-green-500 h-20 w-20"></div>
-              <div class="bg-blue-500 h-20 w-20"></div>
-              <div class="bg-indigo-500 h-20 w-20"></div>
-              <div class="bg-purple-500 h-20 w-20"></div>
+              <div class="bg-red-500 h-20 w-full"></div>
+              <div class="bg-orange-500 h-20 w-full"></div>
+              <div class="bg-yellow-500 h-20 w-full"></div>
+              <div class="bg-green-500 h-20 w-full"></div>
+              <div class="bg-blue-500 h-20 w-full"></div>
+              <div class="bg-indigo-500 h-20 w-full"></div>
+              <div class="bg-purple-500 h-20 w-full"></div>
             </div>`,
           },
           {
