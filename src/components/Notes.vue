@@ -35,7 +35,10 @@
               <li><a href="https://plugins.jetbrains.com/plugin/15321-tailwind-css">PhpStorm</a></li>
               <li><a href="https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss">
                 Visual Studio Code
-              </li></a>`,
+              </li></a>
+            </ul>`,
+            `Need to test something quickly? Check out the
+              <a href="https://play.tailwindcss.com/ejpHvWDhCD">Tailwind Playground</a>`
         ]
       };
     }
