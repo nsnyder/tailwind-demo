@@ -1,6 +1,11 @@
 <template>
-  <div class="">
-    <h2 class="text-4xl">Some notes!</h2>
+  <div :class="visibleTransforms" class="duration-200">
+    <h2 class="text-4xl" @click="toggleRotations">
+      Some notes!
+      <span v-if="visibleTransforms.length" class="font-mono text-xl">
+        class="{{ visibleTransforms.join(' ') }}"
+      </span>
+    </h2>
     <ul class="grid grid-cols-1 lg:grid-cols-3 gap-2">
       <li v-for="(note, index) in notes" class="bg-gray-100 p-2 rounded-md shadow-sm" :key="index" v-html="note" />
     </ul>
@@ -39,8 +44,21 @@
             </ul>`,
             `Need to test something quickly? Check out the
               <a href="https://play.tailwindcss.com/ejpHvWDhCD">Tailwind Playground</a>`
-        ]
+        ],
+        classCount: 0,
+        transformClasses: ['rotate-12', 'transform']
       };
+    },
+
+    methods: {
+      toggleRotations() {
+        this.classCount = (this.classCount + 1) % (this.transformClasses.length + 1);
+      }
+    },
+    computed: {
+      visibleTransforms() {
+        return this.transformClasses.slice(0, this.classCount);
+      }
     }
   }
 </script>
