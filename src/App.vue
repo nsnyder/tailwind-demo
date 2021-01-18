@@ -22,6 +22,7 @@
 
 <script>
   import AboutTailwind from '~/components/AboutTailwind.vue';
+  import Demo from '~/components/Demo.vue';
   import Directives from '~/components/Directives.vue';
   import Notes from '~/components/Notes.vue';
   import PurgeCss from '~/components/PurgeCSS.vue';
@@ -32,6 +33,7 @@
 
     components: {
       AboutTailwind,
+      Demo,
       Directives,
       Notes,
       PurgeCss,
@@ -65,6 +67,10 @@
           {
             name: 'PurgeCSS',
             component: 'purge-css'
+          },
+          {
+            name: 'Demo',
+            component: 'demo'
           },
           {
             name: 'Notes',

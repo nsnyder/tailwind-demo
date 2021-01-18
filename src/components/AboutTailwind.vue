@@ -2,7 +2,10 @@
   <div class="">
     <h2 class="text-4xl">About Tailwind</h2>
     <ul class="space-y-4">
-      <li v-for="(note, index) in notes" class="card" :key="index">
+      <li v-for="(note, index) in notes"
+        :key="index"
+        class="bg-gray-100 p-4 rounded-md shadow-sm"
+      >
         <h2 class="text-xl pb-2" v-text="note.title" />
         <div v-html="note.body" class="space-y-2" />
       </li>
@@ -46,10 +49,3 @@
     }
   }
 </script>
-
-<style scoped>
-  /* Note: I wouldn't actually recommend this, but it is a good demonstration of scoped CSS. */
-  .card {
-    @apply bg-gray-100 p-4 rounded-md shadow-sm;
-  }
-</style>

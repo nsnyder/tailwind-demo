@@ -35,6 +35,7 @@ module.exports = {
   variants: {
     'backgroundColor': ({ after }) => after(['odd']),
     'borderColor': ({ after }) => after(['focus']),
+    'borderWidth': ({ after }) => after(['last']),
     'boxShadow': ({ after }) => after(['active']),
     'translate': ({ after }) => after(['active'])
   },
