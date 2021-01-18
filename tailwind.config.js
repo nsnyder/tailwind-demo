@@ -32,6 +32,9 @@ module.exports = {
       }
     },
   },
-  // variants: {},
+  variants: {
+    'borderColor': ({ variants }) => [...variants('borderColor'), 'active'],
+    'borderWidth': ({ variants }) => [...variants('borderWidth'), 'active']
+  },
   // plugins: [],
 }

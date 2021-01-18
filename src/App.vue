@@ -21,19 +21,21 @@
 </template>
 
 <script>
+  import AboutTailwind from '~/components/AboutTailwind.vue';
   import Directives from '~/components/Directives.vue';
   import Notes from '~/components/Notes.vue';
   import PurgeCss from '~/components/PurgeCSS.vue';
-  import AboutTailwind from '~/components/AboutTailwind.vue';
+  import Variants from '~/components/Variants.vue';
 
   export default {
     name: 'App',
 
     components: {
+      AboutTailwind,
       Directives,
       Notes,
       PurgeCss,
-      AboutTailwind,
+      Variants,
     },
 
     mounted() {
@@ -51,6 +53,10 @@
           {
             name: 'About Tailwind',
             component: 'about-tailwind',
+          },
+          {
+            name: 'Variants',
+            component: 'variants',
           },
           {
             name: '@directives',
