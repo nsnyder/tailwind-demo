@@ -33,7 +33,11 @@
               <li>PurgeCSS</li>
               <li>Config not setup as expected</li>
               <li>Tailwind not up to date with documentation</li>
-              <li>Responsive classes/pseudo selectors (hover, active, focus, etc.) don't work with Tailwind CSS v1</li>
+              <li>
+                Responsive classes/pseudo selectors (hover, active, focus, etc.) can't be used with the
+                <span class="font-mono">@apply</span> directive in Tailwind CSS v1.
+                [<a href="https://v1.tailwindcss.com/docs/functions-and-directives#apply">Documentation</a>]
+              </li>
             </ul>`,
           `<h3 class="font-bold text-lg">Plugins!</h3>
             <ul class="space-y-1 pt-1">
