@@ -1,9 +1,8 @@
 <template>
   <div class="">
     <h2 class="text-4xl">Some notes!</h2>
-    <ul class="grid grid-cols-1 md:grid-cols-3 gap-2
-    ">
-      <li v-for="(note, index) in notes" class="bg-gray-100 p-2 rounded-md" :key="index" v-html="note" />
+    <ul class="grid grid-cols-1 lg:grid-cols-3 gap-2">
+      <li v-for="(note, index) in notes" class="bg-gray-100 p-2 rounded-md shadow-sm" :key="index" v-html="note" />
     </ul>
   </div>
 </template>
@@ -19,8 +18,10 @@
             Restart your <span class="font-mono">watch</span>!`,
           `The <span class="font-mono">transform</span> class is required in <em>addition</em> to things like
             <span class="font-mono">scale-150</span>, <span class="font-mono">rotate-45</span>,
-            <span class="font-mono">translate-x-4</span>, etc.`,
-          `Make sure you're looking at the correct documentation! <a href="https://v1.tailwindcss.com">Tailwind CSS v1</a>
+            <span class="font-mono">translate-x-4</span>, etc. Tailwind uses CSS variables to accomplish transforms,
+            and classes like <span class="font-mono">translate-x-4</span> just set that variable.`,
+          `Make sure you're looking at the correct documentation! Tailwind CSS v2 is out, but we're still using v1.
+            <a href="https://v1.tailwindcss.com">Tailwind CSS v1</a>
             <a href="https://tailwindcss.com">Tailwind CSS v2</a>`,
           `<h3 class="font-bold text-lg">Common gotchas:</h3>
             <ul class="space-y-1 pt-1">
@@ -35,7 +36,6 @@
               <li><a href="https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss">
                 Visual Studio Code
               </li></a>`,
-          
         ]
       };
     }

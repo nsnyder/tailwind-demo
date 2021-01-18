@@ -24,6 +24,7 @@
   import Directives from '~/components/Directives.vue';
   import Notes from '~/components/Notes.vue';
   import PurgeCss from '~/components/PurgeCSS.vue';
+  import AboutTailwind from '~/components/AboutTailwind.vue';
 
   export default {
     name: 'App',
@@ -32,6 +33,7 @@
       Directives,
       Notes,
       PurgeCss,
+      AboutTailwind,
     },
 
     mounted() {
@@ -46,6 +48,10 @@
     data() {
       return {
         demos: [
+          {
+            name: 'About Tailwind',
+            component: 'about-tailwind',
+          },
           {
             name: '@directives',
             component: 'directives',
