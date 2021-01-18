@@ -66,7 +66,8 @@
             <a href="#"
               class="
                 inline-block p-4 bg-red-300
-                border border-red-700 active:border-4 active:border-gray-800
+                text-gray-700 no-underline
+                border border-red-700 active:border-8 active:border-gray-800
             ">
               Some Link
             </a>`
